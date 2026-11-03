@@ -1,0 +1,8 @@
+{
+  "name": "Remix Home Based Electrical and Refrigeration Services",
+  "description": "Connects Kenyan households and businesses countrywide with vetted electrical and refrigeration technicians with 12-hour active access pass, direct M-Pesa PIN payments, technician jobs board, and 30-day guarantee.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

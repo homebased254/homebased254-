@@ -1,0 +1,16 @@
+services:
+  # Option A: Full-Stack (Express Server + Daraja M-Pesa API + React SPA)
+  home-based-services:
+    build:
+      context: .
+      dockerfile: Dockerfile.fullstack
+    image: home-based-services:latest
+    container_name: home_based_services_app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - PORT=3000
+      - NODE_ENV=production

@@ -1,0 +1,24 @@
+# Node.js Full-Stack Dockerfile for HOME BASED SERVICES
+# Serves both the compiled React frontend AND the Safaricom Daraja M-Pesa backend APIs
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm ci || npm install
+
+# Copy application source code
+COPY . .
+
+# Build the React production client into /app/dist
+RUN npm run build
+
+# Expose standard port 3000
+EXPOSE 3000
+
+ENV PORT=3000
+ENV NODE_ENV=production
+
+# Start Express server with Daraja M-Pesa endpoints and static SPA serving
+CMD ["npm", "start"]
